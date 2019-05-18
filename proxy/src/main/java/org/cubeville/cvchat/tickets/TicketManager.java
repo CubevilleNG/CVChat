@@ -197,12 +197,13 @@ public class TicketManager implements IPCInterface
         sender.sendMessage("§eFiled by §c" + ticket.getPlayerName() + "§e at " + getDateStr(ticket.getCreationTimestamp()) + "§e at " + ticket.getServer() + "," + ticket.getWorld() + "," + ticket.getX() + "," + ticket.getY() + "," + ticket.getZ());
         if(!ticket.isClosed() && ticket.isClaimed()) {
             sender.sendMessage("§eClaimed by §d" + ticket.getModeratorName() + "§e at §d" + getDateStr(ticket.getModeratorTimestamp()));
+            sender.sendMessage("§7" + ticket.getText());
         }
         else if(ticket.isClosed()) {
             sender.sendMessage("§eHandled by §d" + ticket.getModeratorName() + "§e at §d" + getDateStr(ticket.getModeratorTimestamp()));
+            sender.sendMessage("§7" + ticket.getText());
             sender.sendMessage("§6Mod comment - §7" + ticket.getModeratorText());
         }
-        sender.sendMessage("§7" + ticket.getText());
     }
     
     private Ticket getTicketById(int id) {
