@@ -14,7 +14,7 @@ import java.util.UUID;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
-import codecrafter47.bungeetablistplus.BungeeTabListPlus;
+import codecrafter47.bungeetablistplus.api.bungee.BungeeTabListPlusAPI;
 
 public class Util
 {
@@ -125,7 +125,7 @@ public class Util
     }
     
     public static boolean playerIsHidden(ProxiedPlayer player) {
-        return (BungeeTabListPlus.isHidden(BungeeTabListPlus.getInstance().getConnectedPlayerManager().getPlayer(player)));
+        return BungeeTabListPlusAPI.isHidden(player);
     }
 
     public static boolean playerIsHidden(UUID playerId) {
