@@ -240,13 +240,7 @@ public class TicketManager implements IPCInterface
         updateTicketAsync(ticket);
 
         sendNotification("§6" + player.getName() + "§6 calls dibs on request #" + ticket.getId() + ".");
-        
-        if(Util.playerIsHidden(player)) {
-            sendPlayerNotification(ticket.getPlayer(), "§6Your request is being handled.");
-        }
-        else {
-            sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 is now handling your request.");
-        }
+        sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 is now handling your request.");
     }
 
     public void closeTicket(CommandSender sender, int ticketId, String text) {
@@ -272,14 +266,7 @@ public class TicketManager implements IPCInterface
 
         sendNotification("§6Request #" + ticket.getId() + " has been completed.");
         sendNotification("§6Mod comment - §7" + text);
-        
-        if(Util.playerIsHidden(player)) {
-            sendPlayerNotification(ticket.getPlayer(), "§6Your request has been completed.");
-        }
-        else {
-            sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 has completed your request.");
-        }
-        
+        sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 has completed your request.");
         if(sendPlayerNotification(ticket.getPlayer(), "§6Mod comment - §7" + text)) {
             ticket.setPlayerNotified(true);
         }
@@ -344,13 +331,7 @@ public class TicketManager implements IPCInterface
         updateTicketAsync(ticket);
 
         sendNotification("§6Request #" + ticket.getId() + " is no longer assigned.");
-        
-        if(Util.playerIsHidden(player)) {
-            sendPlayerNotification(ticket.getPlayer(), "§6Your request is no longer being handled.");
-        }
-        else {
-            sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 is no longer handling your request. Please wait for another mod.");
-        }
+        sendPlayerNotification(ticket.getPlayer(), "§6" + player.getName() + "§6 is no longer handling your request. Please wait for another mod.");
     }
 
     public void holdTicket(CommandSender sender, int ticketId) {
