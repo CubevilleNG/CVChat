@@ -3,6 +3,7 @@ main: org.cubeville.cvchat.CVChat
 authors: [FrediW,unixadmin]
 version: 0.1
 depend: [CVIPC,SuperVanish,WorldGuard]
+api-version: 1.15
 
 commands:
   modreq:
